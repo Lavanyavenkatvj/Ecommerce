@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>ShopFront | Modern Product Catalog</title>
+  <meta name="description" content="Discover our curated collection of premium products. Fast, accessible, and beautifully designed.">
+  <meta name="author" content="Jane Doe">
+  <meta name="keywords" content="ecommerce, product catalog, online shop, premium products">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ShopFront | Modern Product Catalog">
+  <meta property="og:description" content="Discover our curated collection of premium products.">
+  <meta property="og:type" content="website">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Critical CSS loaded first -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="#/" class="logo" aria-label="ShopFront home">
+        Shop<span class="logo-accent">Front</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="primary-nav" class="nav-list">
+          <li><a href="#/" class="nav-link" data-navlink="home">Home</a></li>
+          <li><a href="#/catalog" class="nav-link" data-navlink="catalog">Catalog</a></li>
+          <li><a href="#/about" class="nav-link" data-navlink="about">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
+          <span class="icon-dark" aria-hidden="true">🌙</span>
+          <span class="icon-light" aria-hidden="true">☀️</span>
+        </button>
+        <button class="cart-btn" id="cart-btn" aria-label="Open cart, 0 items">
+          <span class="cart-icon" aria-hidden="true">🛒</span>
+          <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN: router renders pages here -->
+  <main id="main-content" role="main">
+    <div id="app">
+      <!-- Client-side router injects page content here -->
+      <div class="page-loading" id="page-loading" aria-live="polite" aria-label="Loading page">
+        <div class="spinner" aria-hidden="true"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CART DRAWER -->
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping cart" hidden>
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="btn-icon" id="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        Total: <strong id="cart-total">$0.00</strong>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkout-btn">Checkout</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- MODULAR JS: load order matters -->
+  <script src="data.js"></script>
+  <script src="cart.js"></script>
+  <script src="router.js"></script>
+  <script src="pages.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

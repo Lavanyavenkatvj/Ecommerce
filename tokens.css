@@ -1,0 +1,40 @@
+/* tokens.css — design tokens (dark default, light override) */
+:root {
+  --bg:          #0D1117;
+  --bg-raised:   #161B22;
+  --bg-card:     #1C2128;
+  --text:        #E6EDF3;
+  --text-muted:  #7D8590;
+  --accent:      #58A6FF;
+  --accent-alt:  #3FB950;
+  --accent-warm: #F78166;
+  --accent-gold: #E3B341;
+  --border:      #30363D;
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md:   0 4px 24px rgba(0,0,0,0.5);
+
+  --font-display: 'JetBrains Mono', monospace;
+  --font-body:    'Inter', sans-serif;
+
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-lg: 16px;
+
+  --max-width:  1200px;
+  --transition: 0.25s ease;
+}
+
+[data-theme="light"] {
+  --bg:          #F6F8FA;
+  --bg-raised:   #FFFFFF;
+  --bg-card:     #FFFFFF;
+  --text:        #1F2328;
+  --text-muted:  #57606A;
+  --accent:      #0969DA;
+  --accent-alt:  #1A7F37;
+  --accent-warm: #CF222E;
+  --accent-gold: #9A6700;
+  --border:      #D0D7DE;
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:   0 4px 24px rgba(0,0,0,0.12);
+}
